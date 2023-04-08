@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+body{
+background-color: #b21dd3;
+background: linear-gradient(rgb(176, 35, 194) 15%, rgb(96, 11, 231));
+font-family: sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0%;
+}
+.Section{
+    height: 100px;
+    width: 900px;
+    border: 1px solid black;
+}
+.container{
+    background-color: #ffff;
+    border-radius: 8px;
+    box-shadow: 10px 20px 25px rgb(0, 0, 0,1);
+    overflow: hidden;
+    max-width: 100%;
+    width: 400px;
+}
+.header{
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+}   
+.header h2{
+    margin: 0%;
+    text-align: center;
+}
+.form{
+    padding: 30px 40px;
+}
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight:700;
+
+}
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+.form-control input:focus{
+    outline: none;
+    border-color: rgb(173, 173, 172);
+}
+.form-control.success input{
+    border-color: #09c372;
+
+}
+.form-control.error input{
+    border-color: #ff3860;
+
+}
+
+
+
+
+.form button{
+    background-color: #a60b7a;
+    border: none;
+    color: #ffff;
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form button:hover{
+    background-color: #039e00;
+    border: none;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow: #777;
+}

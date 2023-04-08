@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+
+        </div>
+        <form id="myForm" class="form" action="./animaion.html" >
+            <div class="form-control">
+                <label>Username</label>
+                <input type="text" name="username" id="username">
+                <div class="error"></div>
+
+            </div>
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" name="email" id="email">
+                <div class="error"></div>
+
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+               <div class="error"></div>
+            </div>
+            <div class="form-control">
+                <label>Confirm Password</label>
+                <input type="password" name="password2" id="password2" required>
+                <div class="error"></div>
+
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <script>
+      
+        var form = document.getElementById("myForm");
+       var username =document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var password2 = document.getElementById("password2").value;
+       
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        validateInputs();
+
+      });
+      const setError =(element,message) =>{
+        const inputControl =element.parentElement;
+            const errorDisplay =  inputControl.querySelector('.error');
+            errorDisplay.innerText = message;
+            inputControl.classList.add('error')
+            inputControl.classList.remove('success');
+
+      }
+      const setSuccess =(element)=>{
+        const inputControl =element.parentElement;
+            const errorDisplay =  inputControl.querySelector('.error');
+            errorDisplay.innerText = '';
+            inputControl.classList.add('success')
+            inputControl.classList.remove('error');
+
+      }
+
+    
+      const validateInputs =() =>{
+
+        const userNameVal = username.value.trim()
+        const emailVal = email.value.trim()
+        const PasswordVal = password.value.trim()
+        const password2Val = password2.value.trim()
+
+        if(userNameVal === ""){
+          setError(username,'username required!!!')
+        }
+        else{
+          setSuccess(username);
+        }
+
+        if (emailVal === "") {
+           setError(email,`email is required!!`)
+        }else{
+          setSuccess(email)
+        }
+    
+        if (!PasswordVal) {
+          setError(password,`password is invalid!!`)
+
+        }
+        else{
+          setSuccess(password)
+        } 
+        if(PasswordVal !== password2Val){
+          setError(password2,`Mispassword !!!`)
+
+        }
+        else{
+            setSuccess(password2)
+        }
+     
+
+      }
+    
+    </script> 
+    
+</body>
+</html>
